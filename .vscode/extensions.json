@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "austenc.tailwind-docs",
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.path-intellisense",
+    "clinyong.vscode-css-modules",
+    "cweijan.vscode-database-client2",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-complete-tag",
+    "ms-ceintl.vscode-language-pack-zh-hant",
+    "ms-vscode.vscode-css-peek",
+    "riazxrazor.html-to-jsx",
+    "usernamehw.errorlens",
+    "vscode-icons-team.vscode-icons",
+    "ms-ceintl.vscode-language-pack-zh-hant"
+  ],
+  "unwantedRecommendations": ["ms-vscode.vscode-typescript-tslint-plugin"]
+}

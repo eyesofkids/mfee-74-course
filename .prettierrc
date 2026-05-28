@@ -1,0 +1,14 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ["*.css", "*.scss", "*.sass", "*.less"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
