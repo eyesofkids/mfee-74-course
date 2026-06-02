@@ -2,6 +2,8 @@
 
 // 導入類型(型別)
 import { Todo } from '../_types/todo';
+// 導入子元件
+import ListItem from './list-item';
 
 export interface ListProps {
   todos: Todo[];
@@ -19,26 +21,12 @@ export default function List({
       <ul>
         {todos.map((todo) => {
           return (
-            <li key={todo.id}>
-              <input
-                type="checkbox"
-                // 核取方塊是用checked布林值代表是否有被選中
-                checked={todo.completed}
-                onChange={() => {
-                  onToggleCompleted(todo.id);
-                }}
-              />
-              {todo.text}
-              <button
-                onClick={() => {
-                  if (confirm('你確定要刪除這個項目？')) {
-                    onRemove(todo.id);
-                  }
-                }}
-              >
-                x
-              </button>
-            </li>
+            <ListItem
+              key={todo.id}
+              todo={todo}
+              onRemove={onRemove}
+              onToggleCompleted={onToggleCompleted}
+            />
           );
         })}
       </ul>

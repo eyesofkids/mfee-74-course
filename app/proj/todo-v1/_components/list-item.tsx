@@ -1,15 +1,41 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+// 導入類型(型別)
+import { Todo } from '../_types/todo';
 
 export interface ListItemProps {
-  
+  todo: Todo;
+  onToggleCompleted: (id: string) => void;
+  onRemove: (id: string) => void;
 }
 
-export default function ListItem({  }: ListItemProps) {
+export default function ListItem({
+  todo,
+  onToggleCompleted,
+  onRemove,
+}: ListItemProps) {
   return (
     <>
-      <div>ListItem</div>
+      <li key={todo.id}>
+        <input
+          type="checkbox"
+          // 核取方塊是用checked布林值代表是否有被選中
+          checked={todo.completed}
+          onChange={() => {
+            onToggleCompleted(todo.id);
+          }}
+        />
+        {todo.text}
+        <button
+          onClick={() => {
+            if (confirm('你確定要刪除這個項目？')) {
+              onRemove(todo.id);
+            }
+          }}
+        >
+          x
+        </button>
+      </li>
     </>
   );
 }
