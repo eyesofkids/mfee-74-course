@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
+// 佈景樣式context
 import { ThemeProvider } from '@/context/theme';
+// 佈景切換元件
+import ThemeSwitch from './_components/theme-switch';
 
 export const metadata: Metadata = {
   title: 'React課堂範例',
@@ -16,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-full flex flex-col">
         {/* 第3-2步: 最外層元件包裹Provider元件，提供Context給其下的後代元件 */}
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ThemeSwitch />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

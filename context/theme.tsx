@@ -1,7 +1,7 @@
 // 第1步 建立context
-'use client';
+'use client'; // context與Provider元件是客戶端元件的應用
 
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 interface ThemeContextType {
   theme: 'light' | 'dark';
@@ -14,7 +14,7 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 ThemeContext.displayName = 'ThemeContext';
 
 // 第3-1步，建立Provider元件
-function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // 宣告狀態
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
@@ -31,5 +31,14 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-// 導出Context和Provider元件(名稱導出)
-export { ThemeContext, ThemeProvider };
+// 自訂名稱鉤子(先包裝useContext+ThemeContext)
+export const useTheme = () => {
+  // 從context值中解構出value中的值和切換函式
+  const context = useContext(ThemeContext);
+
+  if (!context) {
+    throw Error('it must be used within ThemeProvider');
+  }
+
+  return context;
+};
