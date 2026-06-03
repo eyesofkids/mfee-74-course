@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-// 佈景樣式context
+// 佈景樣式context provider
 import { ThemeProvider } from '@/context/theme';
 // 佈景切換元件
 import ThemeSwitch from './_components/theme-switch';
+// 購物車context provider
+import { CartProvider } from '@/context/cart';
 
 export const metadata: Metadata = {
   title: 'React課堂範例',
@@ -22,7 +24,7 @@ export default function RootLayout({
         <ThemeProvider>
           {/* 先註解掉，要測試theme可以開啟 */}
           {/* <ThemeSwitch /> */}
-          {children}
+          <CartProvider>{children}</CartProvider>
         </ThemeProvider>
       </body>
     </html>
