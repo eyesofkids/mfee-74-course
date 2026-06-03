@@ -25,7 +25,16 @@ export default function ListItem({
             onToggleCompleted(todo.id);
           }}
         />
-        {todo.text}
+        {/* 依照completed狀態的不同來切換樣式(條件式樣式) */}
+        <span
+          style={{
+            color: todo.completed ? 'gray' : 'black',
+            textDecoration: todo.completed ? 'line-through' : 'none',
+          }}
+        >
+          {todo.text}
+        </span>
+
         <button
           onClick={() => {
             if (confirm('你確定要刪除這個項目？')) {
