@@ -1,6 +1,6 @@
 'use client';
 
-import { FilterStatus } from '../_types/todo-app';
+import { FilterStatus } from '../_types/todo';
 
 export interface FilterBarProps {
   filterStatus: FilterStatus;
