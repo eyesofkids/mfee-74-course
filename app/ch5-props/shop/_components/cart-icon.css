@@ -1,0 +1,47 @@
+/* Container holds the icon and badge together */
+.cart-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Icon size and color styling */
+.cart-icon {
+  font-size: 24px;
+  color: #333333;
+}
+
+/* Badge positioned absolute to the top-right corner */
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Shifts the badge center exactly onto the top-right corner of the container */
+  transform: translate(25%, -25%);
+
+  /* Badge dimensions and shape */
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  padding: 0 4px;
+
+  /* Flexbox centers the single or double-digit text perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Colors */
+  background-color: #ff4d4f; /* Vibrant notification red */
+  color: #ffffff;
+
+  /* Typography */
+  font-size: 11px;
+  font-weight: bold;
+  font-family: sans-serif;
+  line-height: 1;
+}
