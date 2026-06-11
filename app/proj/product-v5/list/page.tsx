@@ -13,7 +13,8 @@ import '../_styles/product-table.css';
 
 import useSWR from 'swr';
 // 客製化swr要用的獲取函式
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args: [input: RequestInfo, init?: RequestInit]) =>
+  fetch(...args).then((res) => res.json());
 
 interface Product {
   id: number;
@@ -33,7 +34,7 @@ const url =
 
 export default function ProductTablePage() {
   // 重複利用useFetch寫好的商業邏輯
-  const { data, isLoading } = useSWR(url, fetcher);
+  const { data, isLoading } = useSWR<Product[]>(url, fetcher);
   const products = data;
 
   if (isLoading) {
