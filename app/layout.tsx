@@ -8,6 +8,12 @@ import ThemeSwitch from './_components/theme-switch';
 import { CartProvider } from '@/context/cart';
 // 會員context provider
 import { UserProvider } from '@/context/user';
+import { Inter, Noto_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const notoSansHeading = Noto_Sans({subsets:['latin'],variable:'--font-heading'});
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: 'React課堂範例',
@@ -20,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", inter.variable, notoSansHeading.variable)}>
       <body className="min-h-full flex flex-col">
         {/* 第3-2步: 最外層元件包裹Provider元件，提供Context給其下的後代元件 */}
         <ThemeProvider>
