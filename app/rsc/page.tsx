@@ -1,5 +1,8 @@
 import db from '@/lib/db';
 
+// 導入客戶端元件
+import ListClient from './_components/list.client';
+
 interface Post {
   id: number;
   title: string;
@@ -17,11 +20,8 @@ export default async function RscPage() {
         文章列表(RSC)
       </h1>
       <hr />
-      <ul className="pl-2 list-disc list-inside space-y-3 text-gray-700">
-        {posts.map((post) => {
-          return <li key={post.id}>{post.title}</li>;
-        })}
-      </ul>
+      {/* 傳遞資料給客戶端元件 */}
+      <ListClient posts={posts} />
     </>
   );
 }
