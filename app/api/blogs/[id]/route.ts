@@ -1,14 +1,17 @@
-import db from '@/config/mysql';
+import db from '@/lib/db';
 
 // api路由: /api/blogs/[id]
 
-// GET 所有資料
-export async function GET(request, { params }) {
+// GET 一筆資料
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   // 從動態路由參數得到id(對應資料夾名稱[id])
   // 需要轉成數字資料類型
   const id = Number((await params).id);
   // 資料庫查詢得到資料
-  const [blogs] = await db.query(`SELECT * FROM blog WHERE id=${id}`);
+  const [blogs] = await db.query<any[]>(`SELECT * FROM blog WHERE id=${id}`);
   console.log(blogs);
   // 只需要1筆資料
   const blog = blogs[0];
@@ -17,7 +20,10 @@ export async function GET(request, { params }) {
 }
 
 // (PUT)更新資料
-export async function PUT(request, { params }) {
+export async function PUT(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   // 從動態路由參數中得到id (對應資料夾名稱)
   // 需要轉成數字資料類型
   const id = Number((await params).id);
@@ -37,7 +43,10 @@ export async function PUT(request, { params }) {
 }
 
 // (DELETE)刪除資料
-export async function DELETE(request, { params }) {
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   // 從動態路由參數中得到id (對應資料夾名稱)
   // 需要轉成數字資料類型
   const id = Number((await params).id);

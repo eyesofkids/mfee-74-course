@@ -1,9 +1,9 @@
-import db from '@/config/mysql';
+import db from '@/lib/db';
 
 // api路由: /api/blogs
 
 // GET 所有資料
-export async function GET(request, { params }) {
+export async function GET(request: Request) {
   // 資料庫查詢得到資料
   const [blogs] = await db.query(`SELECT * FROM blog`);
   console.log(blogs);
@@ -12,7 +12,7 @@ export async function GET(request, { params }) {
 }
 
 // POST 新增用
-export async function POST(request, { params }) {
+export async function POST(request: Request) {
   // 得到前端傳來的資料
   const body = await request.json();
   console.log(body);
