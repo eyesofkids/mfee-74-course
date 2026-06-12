@@ -6,7 +6,7 @@ import ListClient from './_components/list.client';
 interface Post {
   id: number;
   title: string;
-  context: string;
+  content: string;
 }
 
 export default async function RscPage() {
