@@ -18,10 +18,10 @@ export default function List({ posts = [] }: ListProps) {
               key={post.id}
               style={{ padding: 8, backgroundColor: '#ccc', margin: 10 }}
             >
-              <Link href={`/rsc/blog/${post.id}`}> {post.title}</Link>
+              <Link href={`/rsc-blog/${post.id}`}> {post.title}</Link>
               <button
                 onClick={() => {
-                  router.push(`/rsc/blog/update/${post.id}`);
+                  router.push(`/rsc-blog/update/${post.id}`);
                 }}
               >
                 編輯

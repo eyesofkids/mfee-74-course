@@ -20,7 +20,7 @@ export default async function PostIdPage({ params }: PostIdPageProps) {
   return (
     <>
       <h1>文章詳細頁</h1>
-      <Link href="/rsc/blog">列表</Link>
+      <Link href="/rsc-blog">列表</Link>
       <hr />
       <h2>{post.title}</h2>
       <p>{post.content}</p>

@@ -15,7 +15,7 @@ export default async function PostRscPage() {
   return (
     <>
       <h1>文章列表頁(rsc)</h1>
-      <Link href="/rsc/blog/add">新增</Link>
+      <Link href="/rsc-blog/add">新增</Link>
       <hr />
       <List posts={posts} />
     </>

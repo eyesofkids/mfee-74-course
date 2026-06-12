@@ -6,7 +6,7 @@ export default async function AddPage() {
   return (
     <>
       <h1>文章新增</h1>
-      <Link href="/rsc/blog">列表</Link>
+      <Link href="/rsc-blog">列表</Link>
       <hr />
       <AddForm />
     </>

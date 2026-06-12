@@ -21,7 +21,7 @@ export default async function BlogUpdateIdPage({
   return (
     <>
       <h1>修改文章</h1>
-      <Link href="/rsc/blog">列表</Link>
+      <Link href="/rsc-blog">列表</Link>
       <hr />
       {/* 更新表單 */}
       <UpdateForm post={post} />
