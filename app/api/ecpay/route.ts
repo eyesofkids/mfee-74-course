@@ -1,7 +1,7 @@
 // 說明：處理金流串接的路由
 import { NextResponse, NextRequest } from 'next/server';
 // 導入服務層的類別
-import { getECPayParams } from '@/server/services/ecpay';
+import { getECPayParams } from './services/ecpay';
 
 export async function GET(request: NextRequest) {
   // 取得查詢參數，與設定預設值
